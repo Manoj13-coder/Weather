@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Weather Application</title>
+		<meta charset="utf-8">
+  		<meta name="viewport" content="width=device-width, initial-scale=1">
+  		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  		<link rel="stylesheet" type="text/css" href="index.css">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	</head>
+	<body>
+		<div class="card" id="Card">
+			<div class="card-header" style="border:none;background-color:transparent;">
+				<img class="rounded-circle" src=<%= icon %>>
+			</div>
+			<div class="card-body text-center">
+				<form class="mx-auto text-center" method="POST" action="/find">
+    				<div class="input-group w-75 mx-auto">
+    					<input type="text" placeholder="State Name" name="state" required class="form-control">
+    					<div class="input-group-append">
+      						<button class="input-group-text btn btn-outline-dark" type="sumbit">Search</button>
+    					</div>
+  					</div>
+				</form>
+				<div class="text-white text-center text-dark mt-5 mb-5" id="Info">
+					<h5>Last Updated : <%= last_updated %></h5>
+					<i class="fa fa-street-view"></i>&nbsp;&nbsp;<a><%= name %></a>
+					<div>
+						<h5>Region : <%= region %></h5>
+						<h5>Country : <%= country %></h5>
+						<h5>Temperature : <%= temperature %></h5>
+						<h5>LocalTime : <%= localtime %></h5>
+						<h5>Condition : <%= condition %></h5>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
