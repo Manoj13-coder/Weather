@@ -4,6 +4,7 @@ const path = require('path');
 const fs = require('fs');
 const url = require('url');
 const app = express();
+const PORT = process.env.PORT || 3000;
 app.set('view engine','ejs');
 app.set('views',path.join(__dirname,'./views'));
 app.use(express.urlencoded());
@@ -36,6 +37,6 @@ app.post('/find',async(req,res)=>{
         return res.status(400).send('Data Not Available');
     }
 });
-app.listen('5000',()=>{
+app.listen(PORT,()=>{
     console.log('Server listening on port 5000');
 })
